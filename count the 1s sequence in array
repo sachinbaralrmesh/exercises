@@ -1,0 +1,77 @@
+var a = [0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1];
+longestOnes(a);
+function longestOnes(a)
+{
+//ar a = [1, 1, 0,1]
+var pv=0,c=0;
+for(var i=0;i<a.length;i++)
+{
+	if(a[i]==1)
+{
+c++;
+
+}
+if(pv<c && a[i]==0){
+pv=c;
+c=0;
+}
+}
+
+if(pv<c){
+pv=c;
+c=0;
+}
+
+return pv;
+}
+
+
+//different
+var a = [0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1,1,1,1,1];
+longestOnes(a);
+function longestOnes(a)
+{
+var pv=0,c=0;
+var test=a.toString().split(0);
+console.log(test);
+for(var i=0;i<test.length;i++)
+{
+if(test[i].length>0)
+{
+var re=test[i].split(',');
+if(re.length>0)
+if(re[1]==1){
+c=re.length-1;
+}
+
+}
+if(c>pv)
+{
+pv=c;
+}
+}
+console.log(pv);
+}
+
+//different
+var a = [0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1,1,1,1,1];
+longestOnes(a);
+function longestOnes(a)
+{
+var test=a.toString().split(0);
+var pv=0,c=0;
+
+console.log(test);
+for(var i=0;i<test.length;i++)
+{
+
+if(test[i].length>pv)
+{
+pv=i;
+}
+
+}
+console.log(test[pv]);
+var t=test[pv].split(',');
+console.log(t.length-1);
+}
