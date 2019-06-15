@@ -75,3 +75,30 @@ console.log(test[pv]);
 var t=test[pv].split(',');
 console.log(t.length-1);
 }
+
+//another way
+  var temp=[0,0,1,1,1,1,0,0,0,0,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1];
+var sum=temp.reduce(function (allNames, name) { 
+  if (name in allNames) {
+     if(isNaN(allNames[name]))
+     {
+       allNames[name]=0;
+       }
+    if(name===1){
+    allNames[name]++;
+    }else
+       if(allNames[0]<=allNames[1]){
+        allNames[0]*=0;
+        allNames[0]+=allNames[1];
+        allNames[1]*=0;
+     
+    }
+  }else{
+    allNames[name]++;
+  }
+  return allNames;
+}, []);
+
+console.log(sum[0]>sum[1]?sum[0]:sum[1]);
+
+
